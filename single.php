@@ -39,21 +39,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                        <a href="about.html" class="nav-item nav-link">Acerca de</a>
-                        <a href="package.html" class="nav-item nav-link">Intranet</a>
-                
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">INFORMES DE REORGANIZACION LEY 1116</a>
-                                <div class="dropdown-menu border-0 rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Blog en Cuadrícula</a>
-                                    <a href="single.html" class="dropdown-item">Detalle del Blog</a>
-                                    <a href="destination.html" class="dropdown-item">Destino</a>
-                                    <a href="guide.html" class="dropdown-item">Guías de Viaje</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonio</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                    <a href="index.php" class="nav-item nav-link active">Inicio</a>
+                        <a href="Index.php" class="nav-item nav-link">Acerca de</a>
+                         <!--<a href="package.html" class="nav-item nav-link">Intranet</a>-->
+                        <a href="single.php" class="nav-item nav-link">INFORMES DE REORGANIZACION LEY 1116</a>
+                        <a href="Index.php" class="nav-item nav-link">Contacto</a>
                             
                     </div>
                 </div>
@@ -79,6 +69,7 @@
     <!-- Header End -->
 
     <!-- Blog Start -->
+
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row">
@@ -91,123 +82,72 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href=""> Astorga</a>
                             </div>
-                            <h4 class="mb-3">Acuerdo de Reorganización</h2>
-                            <p>link de descarga</p>
-                            <p>link de descarga</p>
-
-                            <h4 class="mb-3">Auto Admite Reorganización</h4>
-                          
-                            <p>link de descarga</p>
-                            <p>link de descarga</p>
-
-                            <h4 class="mb-3">Informes del Promotor</h5>
-                    
-                                <p>link de descarga</p>
-                                <p>link de descarga</p>
-    
                         </div>
                     </div>
-                    <!-- Blog Detail End -->
+    
+    <div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Acuerdo de Reorganización</h4>
+    <div class="mb-3">
+    <?php
+    // Mostrar los enlaces a los archivos PDF subidos
+    include 'display.php';
+    displayPDFsTitulo1();
+    ?>
+    </div>
+    </div>
 
-    
-                    <!-- Comment Form Start -
-                    <div class="bg-white mb-3" style="padding: 30px;">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h4>
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group mb-0">
-                                <input type="submit" value="Leave a comment"
-                                    class="btn btn-primary font-weight-semi-bold py-2 px-3">
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Comment Form End -->
-                </div>
+    <div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Auto Admite Reorganización</h4>
+    <div class="mb-3">
+    <?php
+    // Mostrar los enlaces a los archivos PDF subidos
+    displayPDFsTitulo2();
+    ?>
+    </div>
+    </div>
+
+    <div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Informes del Promotor</h4>
+    <div class="mb-3">
+    <?php
+    // Mostrar los enlaces a los archivos PDF subidos
+    displayPDFsTitulo3();
+    ?>
+    </div>
+    </div>
+
+<div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Informes a la Superintendencia de Sociedades</h4>
+    <div class="mb-3">
+    <?php
+    // Mostrar los enlaces a los archivos PDF subidos
+    displayPDFsTitulo4();
+    ?>
+</div> 
+</div>
+
+<div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Estados Financieros</h4>
+    <?php
+    // Mostrar los enlaces a los archivos PDF subidos
+    displayPDFsTitulo5();
+    ?>
+ </div>
+
+</div>
+
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
-                    <!-- Author Bio -->
-                    <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
-                        <img src="img/user.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
-                        <h3 class="text-primary mb-3">Nombre del encargado</h3>
-                        <p>Descripcion</p>
-                        <div class="d-flex justify-content-center">
-                            <a class="text-primary px-2" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="text-primary px-2" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="text-primary px-2" href="">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="text-primary px-2" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a class="text-primary px-2" href="">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Search Form -->
-                    <div class="mb-5">
-                        <div class="bg-white" style="padding: 30px;">
-                            <div class="input-group">
-                                <input type="text" class="form-control p-4" placeholder="¿Qué quieres encontrar?">
-                                <div class="input-group-append">
-                                    <span class="input-group-text bg-primary border-primary text-white"><i
-                                            class="fa fa-search"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Category List -->
                     <div class="mb-5">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categorias</h4>
                         <div class="bg-white" style="padding: 30px;">
                             <ul class="list-inline m-0">
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
-                                        Design</a>
-                                    <span class="badge badge-primary badge-pill">150</span>
-                                </li>
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
-                                        Development</a>
-                                    <span class="badge badge-primary badge-pill">131</span>
-                                </li>
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i
-                                            class="fa fa-angle-right text-primary mr-2"></i>Online Marketing</a>
-                                    <span class="badge badge-primary badge-pill">78</span>
-                                </li>
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i
-                                            class="fa fa-angle-right text-primary mr-2"></i>Keyword Research</a>
-                                    <span class="badge badge-primary badge-pill">56</span>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i
-                                            class="fa fa-angle-right text-primary mr-2"></i>Email Marketing</a>
-                                    <span class="badge badge-primary badge-pill">98</span>
-                                </li>
+                            <?php
+                             // Mostrar los enlaces a los archivos PDF subidos
+                            include 'qty_file.php';
+                            ?>
                             </ul>
                         </div>
                     </div>
