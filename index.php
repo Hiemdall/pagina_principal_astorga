@@ -47,7 +47,6 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="index.html" class="nav-item nav-link active">Inicio</a>
                         <a href="#about" class="nav-item nav-link">Acerca de</a>
-                        <a href="package.html" class="nav-item nav-link">Intranet</a>
                         <a href="single.php" class="nav-item nav-link">INFORMES DE REORGANIZACION LEY 1116</a>
                         <a href="#Contactenos" class="nav-item nav-link">Contacto</a>
                         
@@ -326,7 +325,6 @@
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Acerca de</a>
-                    <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Intranet</a>
                     <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>INFORMES DE REORGANIZACION LEY 1116</a>
                     <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
                     
@@ -340,46 +338,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Calendario</h5>
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column widget_calendar">
-                    <div class="enigma_footer_widget_title"><div class="enigma-footer-separator"></div></div><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar" class="wp-calendar-table">
-                    <caption>septiembre 2023</caption>
-                    <thead>
-                    <tr>
-                        <th scope="col" title="lunes">L</th>
-                        <th scope="col" title="martes">M</th>
-                        <th scope="col" title="miércoles">X</th>
-                        <th scope="col" title="jueves">J</th>
-                        <th scope="col" title="viernes">V</th>
-                        <th scope="col" title="sábado">S</th>
-                        <th scope="col" title="domingo">D</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                    </tr>
-                    <tr>
-                        <td id="today">11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
-                    </tr>
-                    <tr>
-                        <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
-                    </tr>
-                    <tr>
-                        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                        <td class="pad" colspan="1">&nbsp;</td>
-                    </tr>
-                    </tbody>
-                    </table><nav aria-label="Meses anteriores y posteriores" class="wp-calendar-nav">
-                        <span class="wp-calendar-nav-prev"><a href="single.php">&laquo; May</a></span>
-                        <span class="pad">&nbsp;</span>
-                        <span class="wp-calendar-nav-next">&nbsp;</span>
-                    </nav></div></div>		</div>		
-                    </div>
-                </div>
+
         </div>
     </div>
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">

@@ -106,16 +106,6 @@
     </div>
     </div>
 
-    <div class="container py-4 bg-white mb-3">
-    <h4 class="mb-3">Informes del Promotor</h4>
-    <div class="mb-3">
-    <?php
-    // Mostrar los enlaces a los archivos PDF subidos
-    displayPDFsTitulo3();
-    ?>
-    </div>
-    </div>
-
 <div class="container py-4 bg-white mb-3">
     <h4 class="mb-3">Informes a la Superintendencia de Sociedades</h4>
     <div class="mb-3">
@@ -134,14 +124,46 @@
     ?>
  </div>
 
+ <div class="container py-4 bg-white mb-3">
+    <h4 class="mb-3">Informes del Promotor</h4>
+    <div class="mb-3">
+    <form method="POST">
+        <label for="year">Selecciona un año:</label>
+        <select name="year" id="year">
+            <?php
+            // Obtener años disponibles para Informes del Promotor
+            $years = getAvailableYearsForTitle('Informes del Promotor');
+            
+            foreach ($years as $year) {
+                echo "<option value='$year'>$year</option>";
+            }
+            ?>
+        </select>
+        <input type="submit" value="Mostrar documentos">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $selectedYear = $_POST["year"];
+        displayPDFsTitulo3ByYear($selectedYear);
+    }
+    ?>
+    </div>
+    </div>
+
 </div>
 
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
 
                     <!-- Category List -->
-                    <div class="mb-5">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categorias</h4>
+                        <div class="bg-white mb-3" style="padding: 30px;">
+                            <div class="d-flex mb-3">
+                            <h4 class="text-uppercase" style="letter-spacing: 5px;">Categorias</h4>
+                            </div>
+                        </div>
+
+
                         <div class="bg-white" style="padding: 30px;">
                             <ul class="list-inline m-0">
                             <?php
@@ -194,46 +216,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Calendario</h5>
-                <div class="col-md-3 col-sm-6 enigma_footer_widget_column widget_calendar">
-                    <div class="enigma_footer_widget_title"><div class="enigma-footer-separator"></div></div><div id="calendar_wrap" class="calendar_wrap"><table id="wp-calendar" class="wp-calendar-table">
-                    <caption>septiembre 2023</caption>
-                    <thead>
-                    <tr>
-                        <th scope="col" title="lunes">L</th>
-                        <th scope="col" title="martes">M</th>
-                        <th scope="col" title="miércoles">X</th>
-                        <th scope="col" title="jueves">J</th>
-                        <th scope="col" title="viernes">V</th>
-                        <th scope="col" title="sábado">S</th>
-                        <th scope="col" title="domingo">D</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-                    </tr>
-                    <tr>
-                        <td id="today">11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
-                    </tr>
-                    <tr>
-                        <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
-                    </tr>
-                    <tr>
-                        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-                        <td class="pad" colspan="1">&nbsp;</td>
-                    </tr>
-                    </tbody>
-                    </table><nav aria-label="Meses anteriores y posteriores" class="wp-calendar-nav">
-                        <span class="wp-calendar-nav-prev"><a href="https://astorga.com.co/2023/05/">&laquo; May</a></span>
-                        <span class="pad">&nbsp;</span>
-                        <span class="wp-calendar-nav-next">&nbsp;</span>
-                    </nav></div></div>		</div>		
-                    </div>
-                </div>
+
         </div>
     </div>
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">

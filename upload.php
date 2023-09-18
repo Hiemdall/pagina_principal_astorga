@@ -11,12 +11,15 @@ if (isset($_FILES["pdfFile"]) && $_FILES["pdfFile"]["error"] == 0) {
     if ($fileType == "pdf") {
         // Recupera el título seleccionado del formulario
         $title = $_POST["selectTitle"];
+        
+        // Obtener la fecha actual en formato "año-mes-día"
+        $date = date("Y-m-d");
 
         // Mover el archivo PDF a la carpeta de almacenamiento
         if (move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $targetFile)) {
-            // Guardar el nombre del archivo y el título en la base de datos
+            // Guardar el nombre del archivo, título y fecha en la base de datos
             include 'display.php';
-            savePDF(basename($_FILES["pdfFile"]["name"]), $title);
+            savePDF(basename($_FILES["pdfFile"]["name"]), $title, $date);
             header("Location: admin.php");
             exit;
         } else {

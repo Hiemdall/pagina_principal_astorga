@@ -46,7 +46,14 @@ foreach ($titulos as $titulo) {
         echo "<br>";
 
         echo "</div>";
-        echo "<p class='card-text text-center'><small class='text-muted'>Fecha: {$lastPDF['fecha']}</small></p>";
+        echo "<div class='d-flex justify-content-center'>";
+        echo "<p class='card-text text-muted mb-2'>";
+        echo "<i class='fas fa-user'></i> Admin ";
+        echo "</p>";
+        echo "<p class='card-text text-muted mb-2' style='margin-left: 5px;'>";
+        echo "<i class='fas fa-calendar'></i> {$lastPDF['fecha']}";
+        echo "</p>";
+        echo "</div>";
         echo "</div>";
     } else {
         echo "<p class='card-text'>No se encontraron archivos PDF para $titulo.</p>";

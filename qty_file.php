@@ -44,12 +44,13 @@ function displayTotalQty($conn) {
         $row = $result->fetch_assoc();
         $total_qty = $row["total_qty"];
         echo "<div class='total-container'>";
-        echo "<p class='total-number'>Total de Archivos: $total_qty</p>";
+        echo "<p class='total-number fw-bold fs-4'>Total de Archivos: $total_qty</p>"; // Agregar clases de Bootstrap 5
         echo "</div>";
     } else {
-        echo "No se encontraron documentos.";
+        echo "<div class='alert alert-warning' role='alert'>No se encontraron documentos.</div>"; // Agregar una alerta de Bootstrap 5
     }
 }
+
 
 // Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
