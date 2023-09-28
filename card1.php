@@ -1,13 +1,10 @@
 <?php
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "archivos";
+include("./procesos/conexion.php");
 
 // Función para obtener el último documento subido por título
 function getLastPDFByTitle($conn, $title) {
-    $sql = "SELECT * FROM pdfs WHERE title = '$title' ORDER BY fecha DESC LIMIT 1";
+    $sql = "SELECT * FROM pdfs WHERE title = '$title' ORDER BY fecha DESC, hora DESC LIMIT 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -23,7 +20,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-
+$conn->set_charset("utf8mb4");
 // Lista de 5 títulos
 $titulos = array("Acuerdo de Reorganización", "Auto Admite Reorganización", "Promotor", "Superintendencia de Sociedades", "Estados Financieros");
 
@@ -46,11 +43,11 @@ foreach ($titulos as $titulo) {
         echo "<br>";
 
         echo "</div>";
-        echo "<div class='d-flex justify-content-center'>";
+        echo "<div class='d-flex justify-content-between w-100 px-2'>";
         echo "<p class='card-text text-muted mb-2'>";
-        echo "<i class='fas fa-user'></i> Admin ";
+        echo "<i class='fas fa-user'></i>  {$lastPDF['username']} ";
         echo "</p>";
-        echo "<p class='card-text text-muted mb-2' style='margin-left: 5px;'>";
+        echo "<p class='card-text text-muted mb-2'>";
         echo "<i class='fas fa-calendar'></i> {$lastPDF['fecha']}";
         echo "</p>";
         echo "</div>";

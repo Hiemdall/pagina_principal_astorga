@@ -11,6 +11,12 @@ if (isset($_FILES["pdfFile"]) && $_FILES["pdfFile"]["error"] == 0) {
     if ($fileType == "pdf") {
         // Recupera el título seleccionado del formulario
         $title = $_POST["selectTitle"];
+       
+        
+        $user_table = $_POST["user_table"];
+
+        // Recupera la hora del formulario
+        $current_time = $_POST["current_time"];
         
         // Obtener la fecha actual en formato "año-mes-día"
         $date = date("Y-m-d");
@@ -19,8 +25,8 @@ if (isset($_FILES["pdfFile"]) && $_FILES["pdfFile"]["error"] == 0) {
         if (move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $targetFile)) {
             // Guardar el nombre del archivo, título y fecha en la base de datos
             include 'display.php';
-            savePDF(basename($_FILES["pdfFile"]["name"]), $title, $date);
-            header("Location: admin.php");
+            savePDF(basename($_FILES["pdfFile"]["name"]), $title, $date, $user_table, $current_time);
+            header("Location: subir_archivo.php");
             exit;
         } else {
             echo "Hubo un error al subir el archivo.";

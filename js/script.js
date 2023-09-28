@@ -1,3 +1,8 @@
+function confirmDelete(fileName) {
+    if (confirm("¿Estás seguro de que deseas eliminar este archivo?")) {
+        window.location.href = "delete.php?file=" + fileName;
+    }
+}
 const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
 
 sideLinks.forEach(item => {
@@ -54,3 +59,5 @@ toggler.addEventListener('change', function () {
         document.body.classList.remove('dark');
     }
 });
+
+

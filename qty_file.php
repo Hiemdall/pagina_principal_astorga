@@ -1,13 +1,8 @@
 <?php
-
+include("./procesos/conexion.php");
 //ALTER TABLE mi_tabla
 //MODIFY COLUMN mi_campo INT DEFAULT 1;
-
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "archivos";
 
 // Función para obtener el total de qty por title
 function getTotalQtyByTitle($conn) {
@@ -43,13 +38,14 @@ function displayTotalQty($conn) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $total_qty = $row["total_qty"];
-        echo "<div class='total-container'>";
-        echo "<p class='total-number fw-bold fs-4'>Total de Archivos: $total_qty</p>"; // Agregar clases de Bootstrap 5
+        echo "<div class='total-container' style='display:grid; align-items: end; justify-content: center; height: 100%;'>";
+        echo "<p class='total-number fw-bold fs-4' style='margin-top: 1rem;'>Total de Archivos: <spam style='color: green';>$total_qty</spam></p>";
         echo "</div>";
     } else {
-        echo "<div class='alert alert-warning' role='alert'>No se encontraron documentos.</div>"; // Agregar una alerta de Bootstrap 5
+        echo "<div class='alert alert-warning' role='alert'>No se encontraron documentos.</div>"; 
     }
 }
+
 
 
 // Conexión a la base de datos
@@ -57,7 +53,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-
+$conn->set_charset("utf8mb4");
 // ... Tu código PHP existente ...
 
 // Obtener y mostrar el total de qty por title
@@ -89,7 +85,7 @@ if (!empty($totalQtyData)) {
 
 // Mostrar la suma total de qty de todos los documentos
 $total_qty = displayTotalQty($conn);
-
+$conn->set_charset("utf8mb4");
 // Cerrar la conexión a la base de datos
 $conn->close();
 ?>

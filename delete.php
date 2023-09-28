@@ -1,9 +1,6 @@
 <?php
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "archivos";
+include("./procesos/conexion.php");
 
 // Obtener el nombre del archivo a eliminar
 $fileName = $_GET["file"];
@@ -24,6 +21,6 @@ $conn->query($sql);
 $conn->close();
 
 // Redirigir a la página principal
-header("Location: admin.php");
+header("Location: subir_archivo.php");
 exit;
 ?>
